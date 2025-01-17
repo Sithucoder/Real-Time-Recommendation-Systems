@@ -6,7 +6,7 @@ from surprise.model_selection import train_test_split
 
 # Load data
 user_data = pd.read_csv('data/user_data.csv')
-product_data = pd.read_csv('data/product_data.csv')
+product_data = pd.read_csv(r"D:\PROJECTS\Real Time Recommendation systems\Real-Time-Recommendation-Systems\data\product_data.csv")
 
 # Clean data (example: fill missing values)
 product_data['description'].fillna('', inplace=True)
