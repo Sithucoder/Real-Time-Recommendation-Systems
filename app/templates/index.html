@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Recommendations</title>
+</head>
+<body>
+  <h1>Recommended Products</h1>
+  <div id="recommendations"></div>
+  <script>
+    fetch('/recommendations?user_id=1')
+      .then(response => response.json())
+      .then(data => {
+        let html = '<ul>';
+        data.forEach(item => {
+          html += `<li>Product ID: ${item[0]}, Score: ${item[1].toFixed(2)}</li>`;
+        });
+        html += '</ul>';
+        document.getElementById('recommendations').innerHTML = html;
+      });
+  </script>
+</body>
+</html>
